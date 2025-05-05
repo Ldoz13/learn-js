@@ -67,13 +67,38 @@
         // Target, toElement, srcElement, currentTarget
         // clientX, clientY, screenX, screenY
         //altkey, ctrlkey, shift, keycode
-        document.getElementById("owl").addEventListener(
-            "click",
-            (e) => {
-                console.log(e);
+        // document.getElementById("images").addEventListener(
+        //     "click",
+        //     (e) => {
+        //         console.log("clicked inside ul");
 
-            },
-            false
-        );
+        //     },
+        //     false
+        // );
+        // document.getElementById("owl").addEventListener(
+        //     "click",
+        //     (e) => {
+        //         console.log("owl clicked");
+        //         e.stopPropagation()
+
+        //     },
+        //     false
+        // );
+
+
+        // document.getElementById('google').addEventListener('click', function (e){
+        //   console.log("Google Clicked");          
+        //   e.preventDefault()
+        //   e.stopPropagation()
+        // })
+
+        document.querySelector('#images').addEventListener('click', function(e){
+            console.log(e.target.tagName);
+            if (e.target.tagName === 'IMG'){
+            let removeIt = e.target.parentNode
+            removeIt.remove() // new method
+            // removeIt.parentNode.removeChild(removeIt)
+            }
+        }, false)
   </script>
 </html>
